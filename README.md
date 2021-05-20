@@ -11,4 +11,4 @@ Execute this file on the attacker machine.
 ## Objective
 The objective of this program is to execute a reverse shell attack on vulnerable machines by establishing
 a remote interactive shell. The incremental changes I will be adding to this repo will focus more on
-how to write scripts to automate payloads. 
+writing scripts to automate payloads. 
