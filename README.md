@@ -9,5 +9,6 @@ Execute this file on the attacker machine.
 - Test the `client.py` file on a Windows 10 VM.
 - You can also push the `server.py` file to an attacker VM and isolate the network.
 ## Objective
-The objective of this program is to execute a reverse shell attack on vulnerable machines. The incremental changes I will be adding to this repo will focus more on
+The objective of this program is to execute a reverse shell attack on vulnerable machines by establishing
+a remote interactive shell. The incremental changes I will be adding to this repo will focus more on
 how to write scripts to automate payloads. 
