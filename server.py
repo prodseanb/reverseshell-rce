@@ -23,3 +23,4 @@ while run:
 		print('Client lost. Retrying...')
 		client, addr = server.accept()
 		print('Connection opened: ', addr)
+#!!!!write a script to automate payload
