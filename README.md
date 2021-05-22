@@ -19,7 +19,8 @@ print(f'[*] Receive: {cmd}')
 ```python
 #print(f'[*] Receive: {cmd}')
 ```
-Do this only if you don't want the client to receive the output of the commands being used by the server. 
+Do this only if you don't want the client to receive the output of the commands being used by the server.<br />
+Convert both scripts to `.exe` to run it on Windows.
 ## Objective
 The objective of this program is to execute a reverse shell attack on vulnerable machines by establishing
 a remote interactive shell. The incremental changes I will be adding to this repo will focus more on
