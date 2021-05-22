@@ -20,8 +20,8 @@ while True:
 	if cmd[:2] == 'cd':
 		os.chdir(cmd[3:])
 
-	quit = ['q', 'quit', 'x', 'exit']
 	#allow user to quit
+	quit = ['q', 'quit', 'x', 'exit']
 	if cmd.lower() in quit:
 		break
 	try:
