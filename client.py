@@ -18,7 +18,7 @@ while True:
 	print(f'[*] Receive: {cmd}')
 
 	if cmd[:2] == 'cd':
-		os.chdir(cmd[3:])
+		os.chdir(cmd[3:]) #change directory command using os.chdir
 
 	#allow user to quit
 	quit = ['q', 'quit', 'x', 'exit']
