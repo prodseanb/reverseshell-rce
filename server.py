@@ -1,6 +1,10 @@
 import sys
 import socket
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7dccb935c0b9a82a4932fb0ba2b4b37d113984ac
 host = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' #server IP
 port = int(sys.argv[2] if len (sys.argv) > 2 else 5555) # port we're tunneling data into
 
