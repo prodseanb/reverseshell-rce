@@ -1,4 +1,4 @@
-# Reverse Shell Attack
+# Python Reverse Shell
 ## References
 - [TesKill - Trojan (#1) (Series)](https://www.youtube.com/watch?v=WLHlOg-ly2U)
 - [axju](https://axju.de/posts/2021/02/a-reverse-shell-with-python/)
